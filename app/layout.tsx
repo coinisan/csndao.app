@@ -15,7 +15,11 @@ const geistMono = Geist_Mono({
 export const metadata = {
   title: "CSN",
   description: "CSN HUB – Onchain miniapps built by Coinisan",
+  icons: {
+    icon: "/favicon.png", // veya .ico dosyan varsa "/favicon.ico"
+  },
 };
+
 
 export default function RootLayout({
   children,
