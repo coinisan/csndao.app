@@ -1,29 +1,40 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
 import apps from "../data/apps.json";
 
 export default function Home() {
   return (
-    <main className="relative min-h-screen text-white">
-      {/* Background image */}
+    <main className="relative min-h-screen text-white flex flex-col">
+      {/* Background */}
       <div
         className="absolute inset-0 bg-cover bg-center opacity-30"
         style={{ backgroundImage: "url('/background.png')" }}
       ></div>
 
-      {/* Page content */}
-      <div className="relative z-10">
+      {/* Content */}
+      <div className="relative z-10 flex-grow flex flex-col">
+        {/* Header */}
         <section className="text-center py-16">
-          <h1 className="text-5xl font-extrabold mb-2 tracking-tight">
+          <h1 className="text-5xl font-extrabold mb-2 tracking-tight animate-fade-in">
             CSN HUB
           </h1>
         </section>
 
-        <section className="max-w-6xl mx-auto grid gap-6 px-6 sm:grid-cols-2 md:grid-cols-3">
-          {apps.map((app) => (
+        {/* Apps */}
+        <section
+          className={`max-w-6xl mx-auto px-6 ${
+            apps.length === 1
+              ? "flex justify-center"
+              : "grid gap-6 sm:grid-cols-2 md:grid-cols-3"
+          }`}
+        >
+          {apps.map((app, index) => (
             <div
               key={app.slug}
-              className="bg-white/5 rounded-2xl p-6 text-center border border-white/10 hover:bg-white/10 transition"
+              className="bg-white/5 rounded-2xl p-6 text-center border border-white/10 hover:bg-white/10 transition-transform duration-500 ease-out opacity-0 animate-fade-in hover:scale-105 hover:shadow-[0_0_20px_rgba(255,255,255,0.2)]"
+              style={{ animationDelay: `${index * 0.2}s`, animationFillMode: "forwards" }}
             >
               <div className="flex justify-center mb-4">
                 <Image
@@ -47,14 +58,57 @@ export default function Home() {
           ))}
         </section>
 
-        <footer className="text-center py-8 text-gray-500 text-sm">
-          Built by Coinisan • © {new Date().getFullYear()} CSN DAO
+        {/* Footer */}
+        <footer className="mt-auto bg-black/60 border-t border-white/10 py-10 text-center">
+          <p className="text-gray-400 text-sm mb-6">
+            Built by Coinisan • © {new Date().getFullYear()} CSN DAO
+          </p>
+          <div className="flex flex-wrap justify-center gap-4 text-sm text-gray-400">
+            <Link href="https://x.com/Coinisan" target="_blank" className="hover:text-white">
+              Coinisan X
+            </Link>
+            <Link href="https://t.me/Coinisan" target="_blank" className="hover:text-white">
+              Coinisan Telegram
+            </Link>
+            <Link href="https://farcaster.xyz/coinisan" target="_blank" className="hover:text-white">
+              Coinisan Farcaster
+            </Link>
+            <Link href="https://t.me/csndao" target="_blank" className="hover:text-white">
+              CSN Telegram
+            </Link>
+            <Link href="https://x.com/Csn_Dao" target="_blank" className="hover:text-white">
+              CSN X
+            </Link>
+            <Link
+              href="https://farcaster.xyz/~/group/UReokoQZ8JkvbDgjTk7PZA"
+              target="_blank"
+              className="hover:text-white"
+            >
+              CSN Farcaster Group
+            </Link>
+          </div>
         </footer>
       </div>
+
+      {/* Animations */}
+      <style jsx global>{`
+        @keyframes fadeIn {
+          from {
+            opacity: 0;
+            transform: translateY(20px);
+          }
+          to {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+
+        .animate-fade-in {
+          animation: fadeIn 1s ease forwards;
+        }
+      `}</style>
     </main>
   );
 }
-
-
 
 
