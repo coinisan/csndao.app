@@ -22,7 +22,7 @@ export default function Home() {
           </h1>
         </section>
 
-        {/* Apps Section */}
+        {/* App Card */}
         <section
           className={`max-w-6xl mx-auto px-6 ${
             apps.length === 1
@@ -48,17 +48,19 @@ export default function Home() {
                   className="rounded-lg"
                 />
               </div>
+
               <h2 className="text-xl font-semibold mb-2">{app.name}</h2>
               <p className="text-gray-400 mb-4 text-sm">BASE or DICE</p>
 
-              {/* 🔗 Updated Farcaster Link */}
-              <Link
+              {/* 🎯 Updated Farcaster Button */}
+              <a
                 href="https://farcaster.xyz/miniapps/MKSLQNWF-cyH/cdice"
                 target="_blank"
-                className="inline-block bg-white text-black px-4 py-2 rounded-lg font-medium hover:bg-gray-200"
+                rel="noopener noreferrer"
+                className="inline-block bg-white text-black px-4 py-2 rounded-lg font-medium hover:bg-gray-200 transition"
               >
                 Launch on Farcaster
-              </Link>
+              </a>
             </div>
           ))}
         </section>
