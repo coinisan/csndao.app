@@ -1,21 +1,22 @@
-export const metadata = {
-  title: "CSN",
-  description: "CSN HUB – Onchain miniapps built by Coinisan",
+import "./globals.css";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "CSN HUB",
+  description: "BASE or DICE",
+  icons: {
+    icon: "/favicon.png", // ✅ Yeni favicon burada
+  },
 };
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
   return (
     <html lang="en">
-      <body
-        style={{
-          backgroundColor: "#000",
-          color: "#fff",
-          fontFamily: "Inter, sans-serif",
-          margin: 0,
-        }}
-      >
-        {children}
-      </body>
+      <body className="bg-black text-white">{children}</body>
     </html>
   );
 }

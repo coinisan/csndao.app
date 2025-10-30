@@ -6,10 +6,10 @@ import apps from "../data/apps.json";
 
 export default function Home() {
   return (
-    <main className="relative min-h-screen text-white flex flex-col">
+    <main className="relative min-h-screen text-white flex flex-col overflow-hidden">
       {/* Background */}
       <div
-        className="absolute inset-0 bg-cover bg-center opacity-30"
+        className="absolute inset-0 bg-cover bg-center opacity-25 blur-sm"
         style={{ backgroundImage: "url('/background.png')" }}
       ></div>
 
@@ -17,12 +17,15 @@ export default function Home() {
       <div className="relative z-10 flex-grow flex flex-col">
         {/* Header */}
         <section className="text-center py-16">
-          <h1 className="text-5xl font-extrabold mb-2 tracking-tight animate-fade-in">
+          <h1 className="text-6xl font-extrabold mb-2 tracking-tight animate-fade-in">
             CSN HUB
           </h1>
+          <p className="text-gray-400 text-lg">
+            Roll the dice onchain — built by Coinisan on Base & Farcaster.
+          </p>
         </section>
 
-        {/* Apps Section */}
+        {/* Apps */}
         <section
           className={`max-w-6xl mx-auto px-6 ${
             apps.length === 1
@@ -33,7 +36,7 @@ export default function Home() {
           {apps.map((app, index) => (
             <div
               key={app.slug}
-              className="bg-white/5 rounded-2xl p-6 text-center border border-white/10 hover:bg-white/10 transition-transform duration-500 ease-out opacity-0 animate-fade-in hover:scale-105 hover:shadow-[0_0_20px_rgba(255,255,255,0.2)]"
+              className="bg-white/5 rounded-2xl p-6 text-center border border-white/10 backdrop-blur-md shadow-md hover:bg-white/10 transition-transform duration-500 ease-out opacity-0 animate-fade-in hover:scale-105 hover:shadow-[0_0_25px_rgba(255,255,255,0.25)]"
               style={{
                 animationDelay: `${index * 0.2}s`,
                 animationFillMode: "forwards",
@@ -49,14 +52,13 @@ export default function Home() {
                 />
               </div>
 
-              <h2 className="text-xl font-semibold mb-2">{app.name}</h2>
+              <h2 className="text-2xl font-semibold mb-2">{app.name}</h2>
               <p className="text-gray-400 mb-4 text-sm">BASE or DICE</p>
 
-              {/* ✅ Güncellenmiş Farcaster Link */}
               <Link
                 href="https://farcaster.xyz/miniapps/MKSLQNWF-cyH/cdice"
                 target="_blank"
-                className="inline-block bg-white text-black px-4 py-2 rounded-lg font-medium hover:bg-gray-200"
+                className="inline-block bg-white text-black px-4 py-2 rounded-lg font-semibold hover:bg-gray-200 transition"
               >
                 Launch on Farcaster
               </Link>
@@ -97,7 +99,7 @@ export default function Home() {
         </footer>
       </div>
 
-      {/* Animations */}
+      {/* Animation */}
       <style jsx global>{`
         @keyframes fadeIn {
           from {
@@ -109,7 +111,6 @@ export default function Home() {
             transform: translateY(0);
           }
         }
-
         .animate-fade-in {
           animation: fadeIn 1s ease forwards;
         }
