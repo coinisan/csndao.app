@@ -22,7 +22,7 @@ export default function Home() {
           </h1>
         </section>
 
-        {/* App Card */}
+        {/* Apps Section */}
         <section
           className={`max-w-6xl mx-auto px-6 ${
             apps.length === 1
@@ -52,15 +52,14 @@ export default function Home() {
               <h2 className="text-xl font-semibold mb-2">{app.name}</h2>
               <p className="text-gray-400 mb-4 text-sm">BASE or DICE</p>
 
-              {/* 🎯 Updated Farcaster Button */}
-              <a
+              {/* ✅ Güncellenmiş Farcaster Link */}
+              <Link
                 href="https://farcaster.xyz/miniapps/MKSLQNWF-cyH/cdice"
                 target="_blank"
-                rel="noopener noreferrer"
-                className="inline-block bg-white text-black px-4 py-2 rounded-lg font-medium hover:bg-gray-200 transition"
+                className="inline-block bg-white text-black px-4 py-2 rounded-lg font-medium hover:bg-gray-200"
               >
                 Launch on Farcaster
-              </a>
+              </Link>
             </div>
           ))}
         </section>
@@ -72,19 +71,39 @@ export default function Home() {
           </p>
 
           <div className="flex flex-wrap justify-center gap-4 text-sm text-gray-400">
-            <Link href="https://x.com/Coinisan" target="_blank" className="hover:text-white">
+            <Link
+              href="https://x.com/Coinisan"
+              target="_blank"
+              className="hover:text-white"
+            >
               Coinisan X
             </Link>
-            <Link href="https://t.me/Coinisan" target="_blank" className="hover:text-white">
+            <Link
+              href="https://t.me/Coinisan"
+              target="_blank"
+              className="hover:text-white"
+            >
               Coinisan Telegram
             </Link>
-            <Link href="https://farcaster.xyz/coinisan" target="_blank" className="hover:text-white">
+            <Link
+              href="https://farcaster.xyz/coinisan"
+              target="_blank"
+              className="hover:text-white"
+            >
               Coinisan Farcaster
             </Link>
-            <Link href="https://t.me/csndao" target="_blank" className="hover:text-white">
+            <Link
+              href="https://t.me/csndao"
+              target="_blank"
+              className="hover:text-white"
+            >
               CSN Telegram
             </Link>
-            <Link href="https://x.com/Csn_Dao" target="_blank" className="hover:text-white">
+            <Link
+              href="https://x.com/Csn_Dao"
+              target="_blank"
+              className="hover:text-white"
+            >
               CSN X
             </Link>
             <Link
