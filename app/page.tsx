@@ -71,39 +71,19 @@ export default function Home() {
           </p>
 
           <div className="flex flex-wrap justify-center gap-4 text-sm text-gray-400">
-            <Link
-              href="https://x.com/Coinisan"
-              target="_blank"
-              className="hover:text-white"
-            >
+            <Link href="https://x.com/Coinisan" target="_blank" className="hover:text-white">
               Coinisan X
             </Link>
-            <Link
-              href="https://t.me/Coinisan"
-              target="_blank"
-              className="hover:text-white"
-            >
+            <Link href="https://t.me/Coinisan" target="_blank" className="hover:text-white">
               Coinisan Telegram
             </Link>
-            <Link
-              href="https://farcaster.xyz/coinisan"
-              target="_blank"
-              className="hover:text-white"
-            >
+            <Link href="https://farcaster.xyz/coinisan" target="_blank" className="hover:text-white">
               Coinisan Farcaster
             </Link>
-            <Link
-              href="https://t.me/csndao"
-              target="_blank"
-              className="hover:text-white"
-            >
+            <Link href="https://t.me/csndao" target="_blank" className="hover:text-white">
               CSN Telegram
             </Link>
-            <Link
-              href="https://x.com/Csn_Dao"
-              target="_blank"
-              className="hover:text-white"
-            >
+            <Link href="https://x.com/Csn_Dao" target="_blank" className="hover:text-white">
               CSN X
             </Link>
             <Link
