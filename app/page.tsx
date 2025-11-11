@@ -2,14 +2,13 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import apps from "../data/apps.json";
 
 export default function Home() {
   return (
-    <main className="relative min-h-screen text-white flex flex-col overflow-hidden">
+    <main className="relative min-h-screen text-white flex flex-col">
       {/* Background */}
       <div
-        className="absolute inset-0 bg-cover bg-center opacity-25 blur-sm"
+        className="absolute inset-0 bg-cover bg-center opacity-30"
         style={{ backgroundImage: "url('/background.png')" }}
       ></div>
 
@@ -17,53 +16,76 @@ export default function Home() {
       <div className="relative z-10 flex-grow flex flex-col">
         {/* Header */}
         <section className="text-center py-16">
-          <h1 className="text-6xl font-extrabold mb-2 tracking-tight animate-fade-in">
+          <h1 className="text-5xl font-extrabold mb-4 tracking-tight animate-fade-in">
             CSN HUB
           </h1>
-          <p className="text-gray-400 text-lg">
-            Roll the dice onchain — built by Coinisan on Base & Farcaster.
+          <p className="text-[#f5deb3] text-lg max-w-2xl mx-auto animate-fade-in">
+            Welcome to Coinisan’s world you can find everything related to Coinisan and CSN right here.
           </p>
         </section>
 
-        {/* Apps */}
-        <section
-          className={`max-w-6xl mx-auto px-6 ${
-            apps.length === 1
-              ? "flex justify-center"
-              : "grid gap-6 sm:grid-cols-2 md:grid-cols-3"
-          }`}
-        >
-          {apps.map((app, index) => (
-            <div
-              key={app.slug}
-              className="bg-white/5 rounded-2xl p-6 text-center border border-white/10 backdrop-blur-md shadow-md hover:bg-white/10 transition-transform duration-500 ease-out opacity-0 animate-fade-in hover:scale-105 hover:shadow-[0_0_25px_rgba(255,255,255,0.25)]"
-              style={{
-                animationDelay: `${index * 0.2}s`,
-                animationFillMode: "forwards",
-              }}
-            >
-              <div className="flex justify-center mb-4">
-                <Image
-                  src={app.logo}
-                  alt={app.name}
-                  width={80}
-                  height={80}
-                  className="rounded-lg"
-                />
-              </div>
+        {/* Farcaster Section */}
+        <section className="text-center py-16 border-t border-white/10">
+          <h2 className="text-4xl font-bold mb-6 text-purple-500">Farcaster</h2>
+          <p className="text-gray-300 mb-10 max-w-xl mx-auto">
+            Explore the CSN ecosystem on Farcaster
+          </p>
 
-              <h2 className="text-2xl font-semibold mb-2">{app.name}</h2>
-              <p className="text-gray-400 mb-4 text-sm">BASE or DICE</p>
-
-              <Link
-                href="https://farcaster.xyz/miniapps/MKSLQNWF-cyH/cdice"
-                target="_blank"
-                className="inline-block bg-white text-black px-4 py-2 rounded-lg font-semibold hover:bg-gray-200 transition"
-              >
-                Launch on Farcaster
-              </Link>
+          {/* BASE or DICE */}
+          <div className="max-w-xl mx-auto bg-white/5 rounded-2xl p-8 border border-white/10 hover:bg-white/10 transition">
+            <div className="flex justify-center mb-4">
+              <Image
+                src="/logos/cdice.png"
+                alt="BASE or DICE"
+                width={100}
+                height={100}
+                className="rounded-lg shadow-lg"
+              />
             </div>
-          ))}
+            <h3 className="text-2xl font-bold mb-6 text-purple-400">
+              BASE or DICE
+            </h3>
+
+            <Link
+              href="https://farcaster.xyz/miniapps/MKSLQNWF-cyH/cdice"
+              target="_blank"
+              className="inline-block bg-purple-500 text-white px-6 py-2 rounded-lg font-semibold hover:bg-purple-600 transition"
+            >
+              Play on Farcaster
+            </Link>
+          </div>
+        </section>
+
+        {/* Remix Section */}
+        <section className="text-center py-16 border-t border-white/10">
+          <h2 className="text-4xl font-bold mb-4 text-yellow-400">Remix</h2>
+          <p className="text-gray-300 mb-10 max-w-xl mx-auto">
+            With Remix, you can access CSN games not only through the Remix website, but also across multiple platforms such as Farcaster and Telegram.
+          </p>
+
+          {/* 🎮 Run Vitalik Run */}
+          <div className="max-w-xl mx-auto bg-white/5 rounded-2xl p-8 border border-white/10 hover:bg-white/10 transition">
+            <div className="flex justify-center mb-4">
+              <Image
+                src="/vitalik.png"
+                alt="Run Vitalik Run"
+                width={100}
+                height={100}
+                className="rounded-lg shadow-lg"
+              />
+            </div>
+            <h3 className="text-2xl font-bold mb-6 text-yellow-400">
+              Run Vitalik Run
+            </h3>
+
+            <Link
+              href="https://remix.gg/g/c9e5946b-9830-4a7e-81a0-e5b1dfadd119"
+              target="_blank"
+              className="inline-block bg-yellow-400 text-black px-6 py-2 rounded-lg font-semibold hover:bg-yellow-500 transition"
+            >
+              Play on Remix
+            </Link>
+          </div>
         </section>
 
         {/* Footer */}
@@ -71,7 +93,6 @@ export default function Home() {
           <p className="text-gray-400 text-sm mb-6">
             Built by Coinisan • © {new Date().getFullYear()} CSN DAO
           </p>
-
           <div className="flex flex-wrap justify-center gap-4 text-sm text-gray-400">
             <Link href="https://x.com/Coinisan" target="_blank" className="hover:text-white">
               Coinisan X
@@ -99,7 +120,7 @@ export default function Home() {
         </footer>
       </div>
 
-      {/* Animation */}
+      {/* Animations */}
       <style jsx global>{`
         @keyframes fadeIn {
           from {
@@ -111,6 +132,7 @@ export default function Home() {
             transform: translateY(0);
           }
         }
+
         .animate-fade-in {
           animation: fadeIn 1s ease forwards;
         }
