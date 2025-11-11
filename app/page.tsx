@@ -1,7 +1,7 @@
 "use client";
 
-import Image from "next/image";
 import Link from "next/link";
+import { Dice5, Gem } from "lucide-react"; // Ethereum yerine Gem
 
 export default function Home() {
   return (
@@ -32,14 +32,11 @@ export default function Home() {
           </p>
 
           {/* BASE or DICE */}
-          <div className="max-w-xl mx-auto bg-white/5 rounded-2xl p-8 border border-white/10 hover:bg-white/10 transition">
+          <div className="max-w-xl mx-auto bg-white/5 rounded-2xl p-8 border border-white/10 hover:bg-white/10 transition group">
             <div className="flex justify-center mb-4">
-              <Image
-                src="/logos/cdice.png"
-                alt="BASE or DICE"
-                width={100}
-                height={100}
-                className="rounded-lg shadow-lg"
+              <Dice5
+                size={80}
+                className="text-purple-400 transition-transform duration-500 group-hover:rotate-180"
               />
             </div>
             <h3 className="text-2xl font-bold mb-6 text-purple-400">
@@ -64,14 +61,11 @@ export default function Home() {
           </p>
 
           {/* 🎮 Run Vitalik Run */}
-          <div className="max-w-xl mx-auto bg-white/5 rounded-2xl p-8 border border-white/10 hover:bg-white/10 transition">
+          <div className="max-w-xl mx-auto bg-white/5 rounded-2xl p-8 border border-white/10 hover:bg-white/10 transition group">
             <div className="flex justify-center mb-4">
-              <Image
-                src="/vitalik.png"
-                alt="Run Vitalik Run"
-                width={100}
-                height={100}
-                className="rounded-lg shadow-lg"
+              <Gem
+                size={80}
+                className="text-yellow-400 transition-transform duration-700 group-hover:scale-125 group-hover:drop-shadow-[0_0_15px_#FFD700]"
               />
             </div>
             <h3 className="text-2xl font-bold mb-6 text-yellow-400">
@@ -140,4 +134,3 @@ export default function Home() {
     </main>
   );
 }
-
