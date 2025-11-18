@@ -1,6 +1,6 @@
 "use client";
 
-import { Dice5, Gem } from "lucide-react";
+import { Dice5, Gem, Crosshair, Castle, Circle, Infinity } from "lucide-react";
 import Link from "next/link";
 
 export default function Home() {
@@ -30,7 +30,9 @@ export default function Home() {
         {/* Farcaster Section */}
         <section className="text-center py-16">
           <h2 className="text-4xl font-bold text-purple-400 mb-4">Farcaster</h2>
-          <p className="text-gray-400 mb-12">Explore the CSN ecosystem on Farcaster</p>
+          <p className="text-gray-400 mb-12">
+            Explore the CSN ecosystem on Farcaster
+          </p>
 
           {/* CDice Card */}
           <div className="bg-white/5 rounded-2xl p-6 text-center border border-white/10 hover:bg-white/10 transition-transform duration-500 ease-out mx-auto w-[320px] hover:scale-105 hover:shadow-[0_0_20px_rgba(255,255,255,0.2)]">
@@ -63,21 +65,51 @@ export default function Home() {
             Telegram.
           </p>
 
-          {/* Run Vitalik Run card */}
-          <div className="bg-white/5 rounded-2xl p-6 text-center border border-white/10 hover:bg-white/10 transition-transform duration-500 ease-out mx-auto w-[320px] hover:scale-105 hover:shadow-[0_0_20px_rgba(255,255,255,0.2)]">
-            <div className="flex justify-center mb-4">
-              <Gem size={64} className="text-yellow-400" />
-            </div>
-            <h3 className="text-2xl font-semibold mb-2 text-yellow-400">
-              Run Vitalik Run
-            </h3>
-            <Link
-              href="https://remix.gg/g/c9e5946b-9830-4a7e-81a0-e5b1dfadd119"
-              target="_blank"
-              className="inline-block bg-yellow-400 text-black px-4 py-2 rounded-lg font-semibold hover:bg-yellow-500 transition"
-            >
-              Play on Remix
-            </Link>
+          <div className="flex flex-wrap justify-center gap-8">
+            {/* Run Vitalik Run */}
+            <GameCard
+              title="Run Vitalik Run"
+              color="text-yellow-400"
+              bg="bg-yellow-400"
+              icon={<Gem size={64} className="text-yellow-400" />}
+              link="https://remix.gg/g/c9e5946b-9830-4a7e-81a0-e5b1dfadd119"
+            />
+
+            {/* React to Base */}
+            <GameCard
+              title="React to Base"
+              color="text-blue-400"
+              bg="bg-blue-400"
+              icon={<Circle size={64} className="text-blue-400" />}
+              link="https://remix.gg/g/9debd4e0-91e6-45e5-8e9d-1bbbe1fa9c7b"
+            />
+
+            {/* Base Tower Defense */}
+            <GameCard
+              title="Base Tower Defense"
+              color="text-green-400"
+              bg="bg-green-400"
+              icon={<Castle size={64} className="text-green-400" />}
+              link="https://remix.gg/g/a88b7182-0afd-4b66-936c-3022cc69a05a"
+            />
+
+            {/* Base Sniper */}
+            <GameCard
+              title="Base Sniper"
+              color="text-red-400"
+              bg="bg-red-400"
+              icon={<Crosshair size={64} className="text-red-400" />}
+              link="https://remix.gg/g/0d3413f6-d3b4-48d0-92c9-53f0cff290c6"
+            />
+
+            {/* Snake Base */}
+            <GameCard
+              title="Snake Base"
+              color="text-purple-400"
+              bg="bg-purple-400"
+              icon={<Infinity size={64} className="text-purple-400" />}
+              link="https://remix.gg/g/b4d10dab-d29d-4449-ac1b-0f5fe7ff0d7a"
+            />
           </div>
         </section>
 
@@ -131,6 +163,23 @@ export default function Home() {
         }
       `}</style>
     </main>
+  );
+}
+
+/* Reusable GameCard component */
+function GameCard({ title, color, bg, icon, link }: any) {
+  return (
+    <div className="bg-white/5 rounded-2xl p-6 text-center border border-white/10 hover:bg-white/10 transition-transform duration-500 ease-out w-[320px] hover:scale-105 hover:shadow-[0_0_20px_rgba(255,255,255,0.2)]">
+      <div className="flex justify-center mb-4">{icon}</div>
+      <h3 className={`text-2xl font-semibold mb-2 ${color}`}>{title}</h3>
+      <Link
+        href={link}
+        target="_blank"
+        className={`inline-block ${bg} text-black px-4 py-2 rounded-lg font-semibold hover:opacity-90 transition`}
+      >
+        Play on Remix
+      </Link>
+    </div>
   );
 }
 
