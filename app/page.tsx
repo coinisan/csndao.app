@@ -23,7 +23,13 @@ export default function Home() {
 
         {/* CDice Card */}
         <div className="bg-[#0a0a0a] border border-gray-800 rounded-3xl p-8 w-full max-w-sm flex flex-col items-center text-center hover:border-purple-500 transition-colors duration-300 shadow-[0_0_30px_rgba(168,85,247,0.1)]">
-          <div className="text-6xl mb-6">🎲</div>
+          {/* LOGO BURAYA EKLENDİ */}
+          <img 
+            src="/cdice.png" 
+            alt="CDice Logo" 
+            className="w-24 h-24 rounded-2xl mb-6 shadow-lg shadow-purple-900/20 object-cover"
+          />
+          
           <h3 className="text-3xl font-bold text-white mb-2">CDice</h3>
           <p className="text-gray-500 text-sm mb-8 font-medium uppercase tracking-widest">Base or Dice</p>
           
@@ -45,9 +51,15 @@ export default function Home() {
           Explore the CSN Tools on Farcaster
         </p>
 
-        {/* FollowCheck Card (YENİ EKLENDİ) */}
+        {/* FollowCheck Card */}
         <div className="bg-[#0a0a0a] border border-gray-800 rounded-3xl p-8 w-full max-w-sm flex flex-col items-center text-center hover:border-blue-500 transition-colors duration-300 shadow-[0_0_30px_rgba(59,130,246,0.1)]">
-          <div className="text-6xl mb-6">✅</div>
+          {/* LOGO BURAYA EKLENDİ */}
+          <img 
+            src="/followchecklogo.png" 
+            alt="FollowCheck Logo" 
+            className="w-24 h-24 rounded-2xl mb-6 shadow-lg shadow-blue-900/20 object-cover"
+          />
+
           <h3 className="text-3xl font-bold text-white mb-2">FollowCheck</h3>
           <p className="text-gray-500 text-sm mb-8 font-medium uppercase tracking-widest">Check who follows you back</p>
           
@@ -79,7 +91,7 @@ export default function Home() {
           <GameCard 
             title="Run Vitalik Run" 
             desc="Web3-themed endless runner"
-            icon="💎" 
+            image="/RunVitalikRunLogo.png" 
             color="bg-yellow-500 hover:bg-yellow-400 text-black"
             url="https://remix.gg/g/c9e5946b-9830-4a7e-81a0-e5b1dfadd119" 
           />
@@ -87,7 +99,7 @@ export default function Home() {
           <GameCard 
             title="React to Base" 
             desc="Futuristic reaction-time game"
-            icon="🔵" 
+            image="/basereactlogo.png" 
             color="bg-blue-600 hover:bg-blue-500 text-white"
             url="https://remix.gg/g/9debd4e0-91e6-45e5-8e9d-1bbbe1fa9c7b"
           />
@@ -95,7 +107,7 @@ export default function Home() {
           <GameCard 
             title="Base Tower Defense" 
             desc="Neon-styled tower defense"
-            icon="🏰" 
+            image="/basetower.png" 
             color="bg-green-600 hover:bg-green-500 text-white"
             url="https://remix.gg/g/a88b7182-0afd-4b66-936c-3022cc69a05a"
           />
@@ -103,7 +115,7 @@ export default function Home() {
           <GameCard 
             title="Base Sniper" 
             desc="Fastest one wins"
-            icon="🎯" 
+            image="/basesniper.png" 
             color="bg-red-600 hover:bg-red-500 text-white"
             url="https://remix.gg/g/0d3413f6-d3b4-48d0-92c9-53f0cff290c6"
           />
@@ -111,7 +123,7 @@ export default function Home() {
           <GameCard 
             title="Snake Base" 
             desc="Remix-ready Snake game"
-            icon="♾️" 
+            image="/snake.png" 
             color="bg-purple-600 hover:bg-purple-500 text-white"
             url="https://remix.gg/g/b4d10dab-d29d-4449-ac1b-0f5fe7ff0d7a"
           />
@@ -167,13 +179,19 @@ export default function Home() {
   );
 }
 
-// Kart Bileşeni (Aynı)
-function GameCard({ title, desc, icon, color, url }: { title: string, desc: string, icon: string, color: string, url: string }) {
+// Kart Bileşeni (Logolu Versiyon)
+function GameCard({ title, desc, image, color, url }: { title: string, desc: string, image: string, color: string, url: string }) {
   return (
     <div className="group bg-[#0a0a0a] border border-gray-800 rounded-2xl p-4 md:p-6 flex flex-col items-center justify-between min-h-[160px] md:min-h-[220px] hover:border-gray-600 transition-all hover:-translate-y-1">
       
       <div className="flex flex-col items-center w-full">
-        <div className="text-4xl md:text-5xl mt-2 group-hover:scale-110 transition-transform">{icon}</div>
+        {/* EMOJİ YERİNE RESİM GELDİ */}
+        <img 
+          src={image} 
+          alt={title} 
+          className="w-16 h-16 rounded-xl mt-2 shadow-md object-cover group-hover:scale-110 transition-transform" 
+        />
+        
         <h3 className="text-white font-bold text-xs md:text-sm mt-4 line-clamp-1">{title}</h3>
         <p className="text-[10px] text-gray-500 text-center mt-1 leading-tight px-1 h-6">{desc}</p>
       </div>
