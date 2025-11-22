@@ -14,14 +14,14 @@ export default function Home() {
         </p>
       </div>
 
-      {/* --- 2. FARCASTER SECTION (Center Stage) --- */}
-      <div className="w-full flex flex-col items-center mb-24">
-        <h2 className="text-3xl font-bold text-purple-400 mb-2">Farcaster</h2>
-        <p className="text-gray-600 text-[10px] md:text-xs uppercase tracking-[0.2em] mb-8">
-          Explore the CSN ecosystem on Farcaster
+      {/* --- 2. FARCASTER GAME SECTION --- */}
+      <div className="w-full flex flex-col items-center mb-20">
+        <h2 className="text-3xl font-bold text-purple-400 mb-2">Farcaster Game</h2>
+        <p className="text-gray-500 text-[10px] md:text-xs uppercase tracking-[0.2em] mb-8">
+          Explore the CSN Game ecosystem on Farcaster
         </p>
 
-        {/* CDice Card - Featured */}
+        {/* CDice Card */}
         <div className="bg-[#0a0a0a] border border-gray-800 rounded-3xl p-8 w-full max-w-sm flex flex-col items-center text-center hover:border-purple-500 transition-colors duration-300 shadow-[0_0_30px_rgba(168,85,247,0.1)]">
           <div className="text-6xl mb-6">🎲</div>
           <h3 className="text-3xl font-bold text-white mb-2">CDice</h3>
@@ -38,7 +38,29 @@ export default function Home() {
         </div>
       </div>
 
-      {/* --- 3. REMIX SECTION (Horizontal Grid) --- */}
+      {/* --- 3. FARCASTER TOOLS SECTION (YENİ) --- */}
+      <div className="w-full flex flex-col items-center mb-24">
+        <h2 className="text-3xl font-bold text-blue-400 mb-2">Farcaster Tools</h2>
+        <p className="text-gray-500 text-[10px] md:text-xs uppercase tracking-[0.2em] mb-8">
+          Explore the CSN Tools on Farcaster
+        </p>
+
+        {/* BaseApp Tool Card (Örnek Placeholder) */}
+        <div className="bg-[#0a0a0a] border border-gray-800 rounded-3xl p-8 w-full max-w-sm flex flex-col items-center text-center hover:border-blue-500 transition-colors duration-300 shadow-[0_0_30px_rgba(59,130,246,0.1)]">
+          <div className="text-6xl mb-6">🛠️</div>
+          <h3 className="text-3xl font-bold text-white mb-2">BaseApp</h3>
+          <p className="text-gray-500 text-sm mb-8 font-medium uppercase tracking-widest">Mini App Aggregator</p>
+          
+          <button 
+            className="w-full py-3 bg-gray-800 text-gray-400 font-bold rounded-xl cursor-not-allowed"
+            disabled
+          >
+            Coming Soon
+          </button>
+        </div>
+      </div>
+
+      {/* --- 4. REMIX SECTION --- */}
       <div className="w-full max-w-[1400px] mb-32">
         <div className="flex flex-col items-center mb-10">
           <h2 className="text-3xl font-bold text-yellow-400 mb-2">Remix</h2>
@@ -95,7 +117,7 @@ export default function Home() {
         </div>
       </div>
 
-      {/* --- 4. FOOTER (SOCIALS) --- */}
+      {/* --- 5. FOOTER (SOCIALS) --- */}
       <footer className="w-full max-w-3xl border-t border-gray-900 pt-10 flex flex-col items-center">
         <h3 className="text-gray-500 text-xs uppercase tracking-widest mb-6">Community & Socials</h3>
         
@@ -143,7 +165,7 @@ export default function Home() {
   );
 }
 
-// Kart Bileşeni (Güncellendi: Açıklama satırı eklendi)
+// Kart Bileşeni
 function GameCard({ title, desc, icon, color, url }: { title: string, desc: string, icon: string, color: string, url: string }) {
   return (
     <div className="group bg-[#0a0a0a] border border-gray-800 rounded-2xl p-4 md:p-6 flex flex-col items-center justify-between min-h-[160px] md:min-h-[220px] hover:border-gray-600 transition-all hover:-translate-y-1">
@@ -151,7 +173,6 @@ function GameCard({ title, desc, icon, color, url }: { title: string, desc: stri
       <div className="flex flex-col items-center w-full">
         <div className="text-4xl md:text-5xl mt-2 group-hover:scale-110 transition-transform">{icon}</div>
         <h3 className="text-white font-bold text-xs md:text-sm mt-4 line-clamp-1">{title}</h3>
-        {/* Oyun Açıklaması Buraya Eklendi */}
         <p className="text-[10px] text-gray-500 text-center mt-1 leading-tight px-1 h-6">{desc}</p>
       </div>
       
