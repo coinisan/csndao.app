@@ -25,10 +25,10 @@ export default function Home() {
         <div className="bg-[#0a0a0a] border border-gray-800 rounded-3xl p-8 w-full max-w-sm flex flex-col items-center text-center hover:border-purple-500 transition-colors duration-300 shadow-[0_0_30px_rgba(168,85,247,0.1)]">
           <div className="text-6xl mb-6">🎲</div>
           <h3 className="text-3xl font-bold text-white mb-2">CDice</h3>
-          <p className="text-gray-500 text-sm mb-8 font-medium">BASE on DICE</p>
+          <p className="text-gray-500 text-sm mb-8 font-medium uppercase tracking-widest">Base or Dice</p>
           
           <a 
-            href="https://warpcast.com/coinisan" 
+            href="https://farcaster.xyz/miniapps/MKSLQNWF-cyH/cdice" 
             target="_blank"
             rel="noopener noreferrer"
             className="w-full py-3 bg-purple-600 hover:bg-purple-500 text-white font-bold rounded-xl transition-colors"
@@ -54,37 +54,42 @@ export default function Home() {
           
           <GameCard 
             title="Run Vitalik Run" 
+            desc="Web3-themed endless runner"
             icon="💎" 
             color="bg-yellow-500 hover:bg-yellow-400 text-black"
-            url="#" 
+            url="https://remix.gg/g/c9e5946b-9830-4a7e-81a0-e5b1dfadd119" 
           />
 
           <GameCard 
             title="React to Base" 
+            desc="Futuristic reaction-time game"
             icon="🔵" 
             color="bg-blue-600 hover:bg-blue-500 text-white"
-            url="#"
+            url="https://remix.gg/g/9debd4e0-91e6-45e5-8e9d-1bbbe1fa9c7b"
           />
 
           <GameCard 
             title="Base Tower Defense" 
+            desc="Neon-styled tower defense"
             icon="🏰" 
             color="bg-green-600 hover:bg-green-500 text-white"
-            url="#"
+            url="https://remix.gg/g/a88b7182-0afd-4b66-936c-3022cc69a05a"
           />
 
           <GameCard 
             title="Base Sniper" 
+            desc="Fastest one wins"
             icon="🎯" 
             color="bg-red-600 hover:bg-red-500 text-white"
-            url="#"
+            url="https://remix.gg/g/0d3413f6-d3b4-48d0-92c9-53f0cff290c6"
           />
 
           <GameCard 
             title="Snake Base" 
+            desc="Remix-ready Snake game"
             icon="♾️" 
             color="bg-purple-600 hover:bg-purple-500 text-white"
-            url="#"
+            url="https://remix.gg/g/b4d10dab-d29d-4449-ac1b-0f5fe7ff0d7a"
           />
 
         </div>
@@ -104,7 +109,7 @@ export default function Home() {
             <span className="text-[10px] text-gray-600 group-hover:text-white transition-colors">Coinisan</span>
           </a>
 
-          {/* 2. CSN DAO Twitter (YENİ EKLENDİ) */}
+          {/* 2. CSN DAO Twitter */}
           <a href="https://x.com/Csn_Dao" target="_blank" rel="noopener noreferrer" className="group flex flex-col items-center space-y-2">
             <div className="w-12 h-12 bg-gray-900 rounded-full flex items-center justify-center group-hover:bg-blue-500 group-hover:text-white transition-all duration-300 border border-gray-800">
               <svg viewBox="0 0 24 24" className="w-5 h-5 fill-current" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"></path></svg>
@@ -138,21 +143,26 @@ export default function Home() {
   );
 }
 
-// Tekrar kullanılabilir Oyun Kartı Bileşeni
-function GameCard({ title, icon, color, url }: { title: string, icon: string, color: string, url: string }) {
+// Kart Bileşeni (Güncellendi: Açıklama satırı eklendi)
+function GameCard({ title, desc, icon, color, url }: { title: string, desc: string, icon: string, color: string, url: string }) {
   return (
-    <div className="group bg-[#0a0a0a] border border-gray-800 rounded-2xl p-4 md:p-6 flex flex-col items-center justify-between min-h-[160px] md:min-h-[200px] hover:border-gray-600 transition-all hover:-translate-y-1">
-      <div className="text-4xl md:text-5xl mt-2 group-hover:scale-110 transition-transform">{icon}</div>
+    <div className="group bg-[#0a0a0a] border border-gray-800 rounded-2xl p-4 md:p-6 flex flex-col items-center justify-between min-h-[160px] md:min-h-[220px] hover:border-gray-600 transition-all hover:-translate-y-1">
       
-      <div className="w-full mt-4 text-center">
-        <h3 className="text-white font-bold text-xs md:text-sm mb-4 line-clamp-1">{title}</h3>
-        <a 
-          href={url} 
-          className={`block w-full py-2 rounded-lg text-[10px] md:text-xs font-bold uppercase tracking-wide transition-colors ${color}`}
-        >
-          Play on Remix
-        </a>
+      <div className="flex flex-col items-center w-full">
+        <div className="text-4xl md:text-5xl mt-2 group-hover:scale-110 transition-transform">{icon}</div>
+        <h3 className="text-white font-bold text-xs md:text-sm mt-4 line-clamp-1">{title}</h3>
+        {/* Oyun Açıklaması Buraya Eklendi */}
+        <p className="text-[10px] text-gray-500 text-center mt-1 leading-tight px-1 h-6">{desc}</p>
       </div>
+      
+      <a 
+        href={url} 
+        target="_blank"
+        rel="noopener noreferrer"
+        className={`block w-full py-2 mt-3 rounded-lg text-[10px] md:text-xs font-bold uppercase tracking-wide transition-colors ${color} text-center`}
+      >
+        Play on Remix
+      </a>
     </div>
   );
 }
