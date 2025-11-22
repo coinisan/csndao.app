@@ -1,19 +1,18 @@
 import "./globals.css";
+import Navbar from "../components/Navbar"; // <-- Navbar'ı içeri aldık
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "CSN HUB",
-  description:
-    "Welcome to Coinisan’s world you can find everything related to Coinisan and CSN right here.",
+  description: "Welcome to Coinisan’s world you can find everything related to Coinisan and CSN right here.",
   openGraph: {
     title: "CSN HUB",
-    description:
-      "Welcome to Coinisan’s world you can find everything related to Coinisan and CSN right here.",
+    description: "Welcome to Coinisan’s world you can find everything related to Coinisan and CSN right here.",
     url: "https://www.csndao.app",
     siteName: "CSN HUB",
     images: [
       {
-        url: "/logos/cdice.png", // burada istersen farklı bir görsel kullanabiliriz
+        url: "/logos/cdice.png",
         width: 1200,
         height: 630,
         alt: "CSN HUB",
@@ -25,8 +24,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "CSN HUB",
-    description:
-      "Welcome to Coinisan’s world you can find everything related to Coinisan and CSN right here.",
+    description: "Welcome to Coinisan’s world you can find everything related to Coinisan and CSN right here.",
     images: ["/logos/cdice.png"],
   },
 };
@@ -41,7 +39,10 @@ export default function RootLayout({
       <head>
         <link rel="icon" href="/favicon.png" sizes="any" />
       </head>
-      <body className="bg-black text-white">{children}</body>
+      <body className="bg-black text-white antialiased selection:bg-purple-500 selection:text-white">
+        <Navbar />  {/* <-- Navbar buraya eklendi, artık her sayfada görünecek */}
+        {children}
+      </body>
     </html>
   );
 }
