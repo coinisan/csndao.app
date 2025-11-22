@@ -38,25 +38,27 @@ export default function Home() {
         </div>
       </div>
 
-      {/* --- 3. FARCASTER TOOLS SECTION (YENİ) --- */}
+      {/* --- 3. FARCASTER TOOLS SECTION --- */}
       <div className="w-full flex flex-col items-center mb-24">
         <h2 className="text-3xl font-bold text-blue-400 mb-2">Farcaster Tools</h2>
         <p className="text-gray-500 text-[10px] md:text-xs uppercase tracking-[0.2em] mb-8">
           Explore the CSN Tools on Farcaster
         </p>
 
-        {/* BaseApp Tool Card (Örnek Placeholder) */}
+        {/* FollowCheck Card (YENİ EKLENDİ) */}
         <div className="bg-[#0a0a0a] border border-gray-800 rounded-3xl p-8 w-full max-w-sm flex flex-col items-center text-center hover:border-blue-500 transition-colors duration-300 shadow-[0_0_30px_rgba(59,130,246,0.1)]">
-          <div className="text-6xl mb-6">🛠️</div>
-          <h3 className="text-3xl font-bold text-white mb-2">BaseApp</h3>
-          <p className="text-gray-500 text-sm mb-8 font-medium uppercase tracking-widest">Mini App Aggregator</p>
+          <div className="text-6xl mb-6">✅</div>
+          <h3 className="text-3xl font-bold text-white mb-2">FollowCheck</h3>
+          <p className="text-gray-500 text-sm mb-8 font-medium uppercase tracking-widest">Check who follows you back</p>
           
-          <button 
-            className="w-full py-3 bg-gray-800 text-gray-400 font-bold rounded-xl cursor-not-allowed"
-            disabled
+          <a 
+            href="https://farcaster.xyz/miniapps/qgVJ4mXPMFlR/followcheck" 
+            target="_blank"
+            rel="noopener noreferrer"
+            className="w-full py-3 bg-blue-600 hover:bg-blue-500 text-white font-bold rounded-xl transition-colors"
           >
-            Coming Soon
-          </button>
+            Open Tool
+          </a>
         </div>
       </div>
 
@@ -165,7 +167,7 @@ export default function Home() {
   );
 }
 
-// Kart Bileşeni
+// Kart Bileşeni (Aynı)
 function GameCard({ title, desc, icon, color, url }: { title: string, desc: string, icon: string, color: string, url: string }) {
   return (
     <div className="group bg-[#0a0a0a] border border-gray-800 rounded-2xl p-4 md:p-6 flex flex-col items-center justify-between min-h-[160px] md:min-h-[220px] hover:border-gray-600 transition-all hover:-translate-y-1">
