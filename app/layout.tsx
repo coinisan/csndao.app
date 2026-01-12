@@ -3,19 +3,24 @@ import Navbar from "../components/Navbar";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "CSN HUB",
-  description: "Built by Coinisan", // <-- İSTEDİĞİN YAZI BURADA
+  title: "CSN", // <-- SEKME İSMİ DEĞİŞTİ
+  description: "Built by Web3 Researchers",
+  icons: {
+    icon: "/logo.png", // <-- SEKME İKONU (FAVICON) DEĞİŞTİ
+    shortcut: "/logo.png",
+    apple: "/logo.png",
+  },
   openGraph: {
-    title: "CSN HUB",
-    description: "Built by Coinisan", // <-- SOSYAL MEDYA ÖNİZLEMESİ BURADA
+    title: "CSN",
+    description: "Built by Web3 Researchers",
     url: "https://www.csndao.app",
-    siteName: "CSN HUB",
+    siteName: "CSN",
     images: [
       {
-        url: "/logos/cdice.png", // Buradaki resim yoksa boş gri kutu çıkar, varsa görünür
-        width: 1200,
-        height: 630,
-        alt: "CSN HUB - Built by Coinisan",
+        url: "/logo.png",
+        width: 800,
+        height: 600,
+        alt: "CSN Logo",
       },
     ],
     locale: "en_US",
@@ -23,9 +28,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "CSN HUB",
-    description: "Built by Coinisan", // <-- TWITTER AÇIKLAMASI BURADA
-    images: ["/logos/cdice.png"],
+    title: "CSN",
+    description: "Built by Web3 Researchers",
+    images: ["/logo.png"],
   },
 };
 
@@ -37,9 +42,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        <link rel="icon" href="/favicon.png" sizes="any" />
+        {/* Eski favicon linkini garanti olsun diye eziyoruz */}
+        <link rel="icon" href="/logo.png" sizes="any" />
       </head>
-      <body className="bg-black text-white antialiased selection:bg-purple-500 selection:text-white">
+      <body className="bg-[#171717] text-white antialiased selection:bg-yellow-500 selection:text-black">
         <Navbar />
         {children}
       </body>
