@@ -5,10 +5,10 @@ export default function Navbar() {
     <nav className="fixed top-0 w-full z-50 bg-[#171717]/80 backdrop-blur-md border-b border-white/5">
       <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
         
-        {/* LEFT: LOGO (RESİM OLARAK GÜNCELLENDİ) */}
+        {/* LEFT: LOGO (GÜNCELLENDİ: logox.png) */}
         <Link href="/" className="flex items-center gap-3 group">
            <img 
-             src="/logo.png" 
+             src="/logox.png"  // <-- BURASI DEĞİŞTİ
              alt="CSN Logo" 
              className="w-10 h-10 rounded-full object-cover border-2 border-white/20 group-hover:scale-110 transition-transform shadow-[0_0_15px_rgba(234,179,8,0.3)]"
            />
@@ -25,7 +25,7 @@ export default function Navbar() {
           <Link href="/contact" className="hover:text-yellow-400 transition-colors">Contact</Link>
         </div>
 
-        {/* RIGHT: JOIN DAO BUTTON (LİNK EKLENDİ) */}
+        {/* RIGHT: JOIN DAO BUTTON */}
         <a 
           href="https://t.me/csndao" 
           target="_blank" 

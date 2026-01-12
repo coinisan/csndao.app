@@ -3,12 +3,12 @@ import Navbar from "../components/Navbar";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "CSN", // <-- SEKME İSMİ DEĞİŞTİ
+  title: "CSN",
   description: "Built by Web3 Researchers",
   icons: {
-    icon: "/logo.png", // <-- SEKME İKONU (FAVICON) DEĞİŞTİ
-    shortcut: "/logo.png",
-    apple: "/logo.png",
+    icon: "/logox.png", // <-- YENİ LOGO BURAYA EKLENDİ
+    shortcut: "/logox.png",
+    apple: "/logox.png",
   },
   openGraph: {
     title: "CSN",
@@ -17,7 +17,7 @@ export const metadata: Metadata = {
     siteName: "CSN",
     images: [
       {
-        url: "/logo.png",
+        url: "/logox.png", // <-- SOSYAL MEDYA ÖNİZLEMESİ DEĞİŞTİ
         width: 800,
         height: 600,
         alt: "CSN Logo",
@@ -30,7 +30,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "CSN",
     description: "Built by Web3 Researchers",
-    images: ["/logo.png"],
+    images: ["/logox.png"], // <-- TWITTER KARTI DEĞİŞTİ
   },
 };
 
@@ -42,8 +42,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        {/* Eski favicon linkini garanti olsun diye eziyoruz */}
-        <link rel="icon" href="/logo.png" sizes="any" />
+        <link rel="icon" href="/logox.png" sizes="any" />
       </head>
       <body className="bg-[#171717] text-white antialiased selection:bg-yellow-500 selection:text-black">
         <Navbar />
