@@ -32,7 +32,7 @@ export default function About() {
           <div className="w-full md:w-2/3 space-y-6 text-center md:text-left">
             <div>
               <h2 className="text-3xl font-black text-white">COINISAN</h2>
-              <p className="text-yellow-500 font-bold tracking-widest text-xs uppercase mt-1">Researcher & Content Creator</p>
+              <p className="text-yellow-500 font-bold tracking-widest text-xs uppercase mt-1">Researcher</p>
             </div>
             
             <div className="text-gray-300 leading-relaxed font-light space-y-4">
