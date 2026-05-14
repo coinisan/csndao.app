@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import { useState, useEffect, useRef } from "react";
+import { useState } from "react";
 import { Send, Github, Mail } from "lucide-react";
 
 const JOIN_URL =
@@ -92,47 +92,6 @@ const members = [
   { name: "KENZO",         image: "/X8bVXGRp_400x400.jpg",  x: "https://x.com/kenzo_handle" },
 ];
 
-/* ─── TradingView Ticker Tape ──────────────────────────────────────────────── */
-
-function CryptoTicker() {
-  const containerRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    if (!containerRef.current) return;
-    containerRef.current.innerHTML = "";
-
-    const script = document.createElement("script");
-    script.src = "https://s3.tradingview.com/external-embedding/embed-widget-ticker-tape.js";
-    script.async = true;
-    script.type = "text/javascript";
-    script.innerHTML = JSON.stringify({
-      symbols: [
-        { proName: "BINANCE:BTCUSDT", title: "BTC" },
-        { proName: "BINANCE:ETHUSDT", title: "ETH" },
-        { proName: "BINANCE:SOLUSDT", title: "SOL" },
-        { proName: "BINANCE:BNBUSDT", title: "BNB" },
-        { proName: "BINANCE:XRPUSDT", title: "XRP" },
-        { proName: "BINANCE:ADAUSDT", title: "ADA" },
-        { proName: "BINANCE:AVAXUSDT", title: "AVAX" },
-        { proName: "BINANCE:DOGEUSDT", title: "DOGE" },
-        { proName: "BINANCE:DOTUSDT", title: "DOT" },
-        { proName: "BINANCE:LINKUSDT", title: "LINK" },
-      ],
-      showSymbolLogo: true,
-      isTransparent: true,
-      displayMode: "adaptive",
-      colorTheme: "dark",
-      locale: "en",
-    });
-
-    containerRef.current.appendChild(script);
-  }, []);
-
-  return (
-    <div className="tradingview-widget-container overflow-hidden" ref={containerRef} />
-  );
-}
-
 /* ─── Page ─────────────────────────────────────────────────────────────────── */
 
 export default function Home() {
@@ -179,11 +138,6 @@ export default function Home() {
               The Syndicate →
             </Link>
           </div>
-        </div>
-
-        {/* ── TradingView Crypto Ticker ── */}
-        <div className="absolute bottom-0 left-0 w-full border-t border-karon-border bg-karon-bg z-10">
-          <CryptoTicker />
         </div>
       </section>
 

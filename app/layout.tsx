@@ -17,8 +17,11 @@ const dmSerifDisplay = DM_Serif_Display({
 });
 
 export const metadata: Metadata = {
-  title: "KARON — Web3 Research & Development",
-  description: "Built by Web3 Researchers. Advancing the frontier of decentralized systems.",
+  title: "KARON",
+  description: "Native Web3 studio building decentralized tools and communities.",
+  icons: {
+    icon: '/karon-logo.png',
+  },
 };
 
 export default function RootLayout({
