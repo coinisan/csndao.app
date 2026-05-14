@@ -1,12 +1,24 @@
 import "./globals.css";
 import type { Metadata } from "next";
+import { Inter, DM_Serif_Display } from "next/font/google";
+import Navbar from "@/components/Navbar";
+
+const inter = Inter({
+  subsets: ["latin"],
+  variable: "--font-inter",
+  display: "swap",
+});
+
+const dmSerifDisplay = DM_Serif_Display({
+  subsets: ["latin"],
+  weight: "400",
+  variable: "--font-dm-serif",
+  display: "swap",
+});
 
 export const metadata: Metadata = {
-  title: "CSN HUB",
-  description: "BASE or DICE",
-  icons: {
-    icon: "/favicon.png", // ✅ Yeni favicon burada
-  },
+  title: "KARON — Web3 Research & Development",
+  description: "Built by Web3 Researchers. Advancing the frontier of decentralized systems.",
 };
 
 export default function RootLayout({
@@ -15,8 +27,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
-      <body className="bg-black text-white">{children}</body>
+    <html lang="en" className={`${inter.variable} ${dmSerifDisplay.variable}`} suppressHydrationWarning>
+      <body className="bg-karon-bg text-karon-text antialiased" suppressHydrationWarning>
+        <Navbar />
+        {children}
+      </body>
     </html>
   );
 }
