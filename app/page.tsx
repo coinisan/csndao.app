@@ -77,19 +77,19 @@ const remixGames = [
 ];
 
 const growthLeaders = [
-  { name: "Showmaker", image: "/showmaker.jpg", x: "https://x.com/showmaker_handle" },
-  { name: "NikkiSixx7", image: "/nikki.jpg", x: "https://x.com/nikki_handle" },
+  { name: "Showmaker", image: "/showmaker.jpg", x: "https://x.com/0xshowmaker" },
+  { name: "NikkiSixx7", image: "/nikki.jpg", x: "https://x.com/NikkiSixx_7" },
 ];
 
 const members = [
-  { name: "Corr",          image: "/corr.jpg",              x: "https://x.com/corr_handle" },
-  { name: "Bthd",          image: "/Sc3l19UM_400x400.jpg",  x: "https://x.com/bthd_handle" },
-  { name: "Kripto Sensei", image: "/qPT72y_d_400x400.jpg",  x: "https://x.com/kriptosensei_handle" },
-  { name: "Cryptograsi",   image: "/dmRCFkw5_400x400.jpg",  x: "https://x.com/cryptograsi_handle" },
-  { name: "mehm.eth",      image: "/0OoEU-Xt_400x400.jpg",  x: "https://x.com/mehmeth_handle" },
-  { name: "0xklc",         image: "/iWD4FGEc_400x400.jpg",  x: "https://x.com/0xklc_handle" },
-  { name: "Crypto Sinan",  image: "/W4yWNZsR_400x400.jpg",  x: "https://x.com/cryptosinan_handle" },
-  { name: "KENZO",         image: "/X8bVXGRp_400x400.jpg",  x: "https://x.com/kenzo_handle" },
+  { name: "Corr",          image: "/corr.jpg",              x: "https://x.com/corrxbt" },
+  { name: "Bthd",          image: "/Sc3l19UM_400x400.jpg",  x: "#" },
+  { name: "Kripto Sensei", image: "/qPT72y_d_400x400.jpg",  x: "#" },
+  { name: "Persona Grata", image: "/dmRCFkw5_400x400.jpg",  x: "https://x.com/PersonnaGrateus" },
+  { name: "mehm.eth",      image: "/0OoEU-Xt_400x400.jpg",  x: "https://x.com/0xmehmeth" },
+  { name: "0xklc",         image: "/iWD4FGEc_400x400.jpg",  x: "https://x.com/0xklc" },
+  { name: "Crypto Sinan",  image: "/W4yWNZsR_400x400.jpg",  x: "https://x.com/CryptoSinan" },
+  { name: "KENZO",         image: "/X8bVXGRp_400x400.jpg",  x: "https://x.com/Law955" },
 ];
 
 /* ─── Page ─────────────────────────────────────────────────────────────────── */
@@ -395,7 +395,7 @@ export default function Home() {
                 </div>
               </div>
               <Link
-                href="https://x.com/Csn_Dao"
+                href="https://x.com/karon_io"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-3 border border-karon-border rounded-lg px-5 py-4 hover:border-karon-muted hover:bg-karon-surface transition-all duration-300 group"
